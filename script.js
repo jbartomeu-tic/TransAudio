@@ -3,7 +3,7 @@ const isLocal = window.location.hostname === 'localhost' ||
                 window.location.hostname === '127.0.0.1' || 
                 window.location.protocol === 'file:';
 // Si estás en producción, aquí deberás poner la URL de tu backend desplegado (ej: Render o Railway)
-const PRODUCTION_API_URL = 'https://tu-backend-en-render.com'; 
+const PRODUCTION_API_URL = 'https://transaudio-backend.onrender.com'; 
 
 const API_BASE = isLocal ? 'http://localhost:2304/api' : `${PRODUCTION_API_URL}/api`;
 
