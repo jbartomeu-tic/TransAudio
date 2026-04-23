@@ -7,6 +7,30 @@ const PRODUCTION_API_URL = 'https://transaudio-backend.onrender.com';
 
 const API_BASE = isLocal ? 'http://localhost:2304/api' : `${PRODUCTION_API_URL}/api`;
 
+// Función para verificar si el servidor está "despierto"
+async function checkServerHealth() {
+    const statusDot = document.getElementById('status-dot');
+    const statusText = document.getElementById('status-text');
+    
+    if (!statusDot || !statusText) return;
+
+    try {
+        const response = await fetch(isLocal ? 'http://localhost:2304/' : `${PRODUCTION_API_URL}/`);
+        if (response.ok) {
+            statusDot.style.backgroundColor = '#2ecc71'; // Verde
+            statusText.innerText = 'Servidor listo';
+        }
+    } catch (error) {
+        statusDot.style.backgroundColor = '#f1c40f'; // Amarillo
+        statusText.innerText = 'Servidor despertando... (puede tardar 1 min)';
+        // Reintentar en 5 segundos
+        setTimeout(checkServerHealth, 5000);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    checkServerHealth();
+});
 
 const videoUrlInput = document.getElementById('videoUrl');
 const btnFetch = document.getElementById('btnFetch');
