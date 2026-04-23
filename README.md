@@ -14,6 +14,8 @@ TransAudio/
 ├── tools/               # Utilidades de Windows
 │   ├── Lanzar_TransAudio.bat
 │   └── Instalar_Acceso_Directo.bat
+├── docs/                # Historia y documentación
+│   └── historia.md      # La historia tras este proyecto
 ├── .gitignore           # Archivos excluidos de Git
 └── README.md            # Guía del proyecto
 ```
@@ -89,3 +91,6 @@ Este proyecto está bajo la licencia MIT.
 
 | [![jbartomeu-tic](https://img.shields.io/badge/jbartomeu--tic-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/jbartomeu-tic) | [![poltorprogrammer](https://img.shields.io/badge/poltorprogrammer-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/poltorprogrammer) |
 | :---: | :---: |
+
+---
+✨ **Conoce la historia detrás de este proyecto:** [Leer nuestra aventura técnica (Abuelo & Nieto)](docs/historia.md)
