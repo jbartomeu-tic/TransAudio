@@ -26,10 +26,10 @@ def get_info():
         'quiet': True,
         'no_warnings': True,
         'format': 'bestaudio/best',
-        # Intentamos identificarnos como cliente de iOS para evitar el bloqueo de bots
+        # Intentamos con 'mweb' que es el cliente con menos seguridad de YouTube
         'extractor_args': {
             'youtube': {
-                'player_client': ['ios', 'web'],
+                'player_client': ['mweb', 'ios'],
                 'skip': ['webpage', 'configs'],
             }
         },
@@ -68,7 +68,7 @@ def download():
         'quiet': True,
         'extractor_args': {
             'youtube': {
-                'player_client': ['ios', 'web'],
+                'player_client': ['mweb', 'ios'],
                 'skip': ['webpage', 'configs'],
             }
         },
