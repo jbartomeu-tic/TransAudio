@@ -14,8 +14,6 @@ TransAudio/
 ├── tools/               # Utilidades de Windows
 │   ├── Lanzar_TransAudio.bat
 │   └── Instalar_Acceso_Directo.bat
-├── docs/                # Documentación técnica
-│   └── idea.md
 ├── .gitignore           # Archivos excluidos de Git
 └── README.md            # Guía del proyecto
 ```
