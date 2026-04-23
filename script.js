@@ -34,6 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const videoUrlInput = document.getElementById('videoUrl');
 const btnFetch = document.getElementById('btnFetch');
+
+// Permitir analizar al pulsar Enter
+videoUrlInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        btnFetch.click();
+    }
+});
 const fetchLoader = document.getElementById('fetchLoader');
 const btnText = btnFetch.querySelector('.btn-text');
 const errorMessage = document.getElementById('errorMessage');
