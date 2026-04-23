@@ -26,6 +26,13 @@ def get_info():
         'quiet': True,
         'no_warnings': True,
         'format': 'bestaudio/best',
+        # Intentamos identificarnos como cliente de Android para evitar el bloqueo de bots
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'web'],
+                'skip': ['webpage', 'configs'],
+            }
+        }
     }
 
     try:
@@ -58,6 +65,12 @@ def download():
             'preferredquality': '192',
         }],
         'quiet': True,
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'web'],
+                'skip': ['webpage', 'configs'],
+            }
+        }
     }
 
     try:
