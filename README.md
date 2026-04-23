@@ -93,4 +93,6 @@ Este proyecto está bajo la licencia MIT.
 | :---: | :---: |
 
 ---
-✨ **Conoce la historia detrás de este proyecto:** [Leer nuestra aventura técnica (Abuelo & Nieto)](docs/historia.md)
+✨ **Conoce la historia detrás de este proyecto:**
+
+[![Nuestra Historia](https://img.shields.io/badge/NUESTRA_HISTORIA-Abuelo_&_Nieto-ff69b4?style=for-the-badge&logo=bookstack&logoColor=white)](docs/historia.md)
