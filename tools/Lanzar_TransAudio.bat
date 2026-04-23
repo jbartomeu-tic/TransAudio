@@ -17,8 +17,8 @@ if %errorlevel% neq 0 (
 )
 echo [OK] Python encontrado.
 
-:: 2. Entrar a la carpeta del servidor
-cd /d "%~dp0server_python"
+:: 2. Entrar a la carpeta del servidor (está un nivel arriba)
+cd /d "%~dp0..\server"
 if %errorlevel% neq 0 (
     echo [ERROR] No se pudo encontrar la carpeta del servidor.
     pause
@@ -46,7 +46,7 @@ echo.
 echo [INFO] Iniciando servidor en http://localhost:2304
 start /b python app.py
 
-:: 6. Abrir la interfaz (que ahora está en la raíz)
+:: 6. Abrir la interfaz (que está un nivel arriba respecto al servidor)
 timeout /t 3 >nul
 echo [INFO] Abriendo interfaz...
 start "" "..\index.html"

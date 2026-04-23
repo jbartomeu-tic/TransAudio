@@ -3,8 +3,8 @@ title TransAudio - Creador de Acceso Directo
 setlocal enabledelayedexpansion
 
 :: Definir rutas (usando comillas para manejar espacios)
-set "targetPath=%~dp0start.bat"
-set "shortcutPath=%~dp0TransAudio.lnk"
+set "targetPath=%~dp0Lanzar_TransAudio.bat"
+set "shortcutPath=%~dp0..\TransAudio.lnk"
 set "workingDir=%~dp0"
 
 echo ==========================================
@@ -20,9 +20,9 @@ if exist "%shortcutPath%" (
     echo [OK] Se ha creado el archivo: TransAudio.lnk
     echo.
     echo 💡 Instrucciones:
-    echo 1. Ahora verás un archivo llamado 'TransAudio' en esta carpeta.
+    echo 1. Ahora veras un acceso directo llamado 'TransAudio' en la CARPETA RAIZ.
     echo 2. Puedes copiarlo o moverlo a tu Escritorio o donde quieras.
-    echo 3. Al abrirlo, el programa funcionará perfectamente.
+    echo 3. Al abrirlo, el programa funcionara perfectamente.
 ) else (
     echo [ERROR] No se pudo crear el acceso directo.
     echo Intenta ejecutar este archivo como administrador si el error persiste.

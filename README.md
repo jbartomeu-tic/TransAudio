@@ -3,13 +3,19 @@
 ![TransAudio Banner](https://images.unsplash.com/photo-1614149162883-504ce4d13909?q=80&w=1000&auto=format&fit=crop)
 
 **TransAudio/**
-├── index.html        # Interfaz de usuario principal (Raíz para GitHub Pages)
-├── style.css         # Estilo premium
-├── script.js         # Lógica del frontend
-├── server_python/    # Servidor de procesamiento (Python + Flask)
+├── index.html           # Interfaz de usuario principal (Raíz para GitHub Pages)
+├── style.css            # Estilo premium
+├── script.js            # Lógica del frontend
+├── server/              # Servidor de procesamiento (Python + Flask)
 │   ├── app.py
 │   └── requirements.txt
-└── README.md         # Documentación
+├── tools/               # Scripts de utilidad y lanzadores
+│   ├── Lanzar_TransAudio.bat
+│   └── Instalar_Acceso_Directo.bat
+├── docs/                # Documentación técnica
+│   └── idea.md
+├── .gitignore           # Archivos ignorados por Git
+└── README.md            # Documentación principal
 
 **TransAudio** es una aplicación web moderna y minimalista diseñada para extraer la esencia del sonido. Convierte tus videos favoritos de YouTube a MP3 con una calidad excepcional y una interfaz visualmente impresionante basada en **Glassmorphism**.
 
@@ -19,26 +25,26 @@
 Puedes ver una vista previa de la interfaz aquí:
 👉 **[Ver Demo en GitHub Pages](https://jbartomeu-tic.github.io/TransAudio/)**
 
-> [!NOTE]
-> La versión en GitHub Pages es solo una demostración de la interfaz. Para realizar conversiones reales, el servidor de Node.js debe estar activo (sigue las instrucciones de instalación abajo).
+> [!IMPORTANT]
+> La versión en GitHub Pages requiere que el servidor de Python esté activo o desplegado en la nube (ver instrucciones de instalación abajo).
 
 ---
 
 ## ✨ Características
 
 - 💎 **Diseño Premium:** Interfaz elegante con efectos de cristal (Glassmorphism), animaciones fluidas y modo oscuro nativo.
-- ⚡ **Conversión Rápida:** Procesamiento optimizado de audio mediante `ytdl-core` y `FFmpeg`.
+- ⚡ **Conversión Rápida:** Procesamiento optimizado de audio mediante `yt-dlp` y `FFmpeg`.
 - 📊 **Barra de Progreso Real:** Visualiza el estado de la conversión en tiempo real.
 - 📱 **Totalmente Responsivo:** Diseñado para verse increíble en móviles, tablets y escritorio.
-- 📂 **Lanzador Personalizado:** Incluye un script para crear accesos directos y abrir el programa fácilmente.
+- 📂 **Lanzador Personalizado:** Incluye un acceso directo para abrir el programa fácilmente desde Windows.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
 - **Frontend:** HTML5, CSS3 (Vanilla), JavaScript (ES6+).
-- **Backend:** Node.js, Express.
-- **Procesamiento:** FFmpeg, Fluent-ffmpeg.
+- **Backend:** Python (Flask).
+- **Procesamiento:** yt-dlp, FFmpeg.
 - **Diseño:** Google Fonts (Outfit), CSS Glassmorphism.
 
 ---
@@ -48,8 +54,8 @@ Puedes ver una vista previa de la interfaz aquí:
 Sigue estos pasos para ejecutar TransAudio en tu computadora:
 
 ### Requisitos Previos
-- [Node.js](https://nodejs.org/) (Versión 16 o superior recomendada)
-- [Python](https://www.python.org/) (Para el procesamiento interno de yt-dlp)
+- [Python](https://www.python.org/) (Versión 3.9 o superior)
+- [FFmpeg](https://ffmpeg.org/download.html) (Instalado en el sistema)
 
 ### Pasos
 1. **Clona el repositorio:**
@@ -58,32 +64,32 @@ Sigue estos pasos para ejecutar TransAudio en tu computadora:
    cd TransAudio
    ```
 
-2. **Backend de Python (Recomendado para GitHub Pages):**
-   - Haz doble clic en `start_python.bat`. Este script configurará un entorno virtual e instalará `yt-dlp` y `Flask`.
+2. **Configuración inicial:**
+   - Entra en la carpeta `tools/` y ejecuta `Instalar_Acceso_Directo.bat`.
+   - Esto creará un icono llamado **TransAudio** en la carpeta raíz.
+
+3. **Ejecutar el programa:**
+   - Simplemente haz doble clic en el acceso directo **TransAudio** de la raíz.
+   - El script configurará automáticamente el entorno de Python e instalará las librerías necesarias en el primer inicio.
    
-3. **Despliegue en GitHub Pages:**
-   - Sube la carpeta `client` a tu repositorio de GitHub y activa GitHub Pages.
-   - Despliega el contenido de `server_python` en [Render](https://render.com) o [Railway](https://railway.app).
-   - Una vez desplegado el backend, copia la URL que te den y pégala en `client/script.js` dentro de la variable `PRODUCTION_API_URL`.
-
-4. **(Opcional) Backend de Node.js:**
-   - Si prefieres usar Node, ejecuta `start.bat`.
-
+4. **Despliegue en GitHub Pages:**
+   - Sube todos los archivos de la raíz a tu repositorio de GitHub y activa GitHub Pages.
+   - Despliega el contenido de la carpeta `server` en [Render](https://render.com) usando el `Dockerfile` incluido.
+   - Una vez desplegado el backend, copia la URL que te den y pégala en `script.js` dentro de la variable `PRODUCTION_API_URL`.
 
 ---
 
 ## 📸 Capturas de Pantalla
-
-*(Próximamente: Añade aquí capturas de tu aplicación para impresionar a los visitantes)*
+*(Próximamente)*
 
 ---
 
 ## 🤝 Contribuciones
-Las contribuciones, problemas y solicitudes de características son bienvenidos. ¡Siéntete libre de revisar la página de [issues](https://github.com/jbartomeu-tic/TransAudio/issues)!
+Las contribuciones son bienvenidas. ¡Siéntete libre de revisar la página de [issues](https://github.com/jbartomeu-tic/TransAudio/issues)!
 
 ## 📄 Licencia
 Este proyecto está bajo la licencia MIT.
 
 ---
 
-Desarrollado con ❤️ por [[jbartomeu-tic](https://github.com/jbartomeu-tic)]
+Desarrollado con ❤️ por [[jbartomeu-tic](https://github.com/jbartomeu-tic)] y [[poltorprogrammer](https://github.com/poltorprogrammer)]

@@ -1,5 +1,7 @@
 // Detectar si estamos en local o en producción (GitHub Pages)
-const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const isLocal = window.location.hostname === 'localhost' || 
+                window.location.hostname === '127.0.0.1' || 
+                window.location.protocol === 'file:';
 // Si estás en producción, aquí deberás poner la URL de tu backend desplegado (ej: Render o Railway)
 const PRODUCTION_API_URL = 'https://tu-backend-en-render.com'; 
 
