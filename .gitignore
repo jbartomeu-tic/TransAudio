@@ -1,0 +1,21 @@
+# Python
+server_python/venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node.js (por si quedó algo)
+node_modules/
+npm-debug.log*
+
+# Entorno de desarrollo e IDEs
+.vscode/
+.idea/
+.env
+
+# Archivos de sistema y basura
+Thumbs.db
+.DS_Store
+
+# Ejecutables locales (opcional, pero recomendado para GitHub)
+*.lnk
