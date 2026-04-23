@@ -87,4 +87,7 @@ Este proyecto está bajo la licencia MIT.
 
 ---
 
-Desarrollado con ❤️ por [[jbartomeu-tic](https://github.com/jbartomeu-tic)] y [[poltorprogrammer](https://github.com/poltorprogrammer)]
+### Desarrollado con ❤️ por:
+
+| [![jbartomeu-tic](https://img.shields.io/badge/jbartomeu--tic-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/jbartomeu-tic) | [![poltorprogrammer](https://img.shields.io/badge/poltorprogrammer-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/poltorprogrammer) |
+| :---: | :---: |
