@@ -15,11 +15,20 @@ async function checkServerHealth() {
     if (!statusDot || !statusText) return;
 
     try {
-        const response = await fetch(isLocal ? 'http://localhost:2304/' : `${PRODUCTION_API_URL}/`);
+        // Añadimos un timestamp para evitar que el navegador nos de una respuesta cacheada
+        const url = (isLocal ? 'http://localhost:2304/' : `${PRODUCTION_API_URL}/`) + '?t=' + Date.now();
+        const response = await fetch(url);
+        
         if (response.ok) {
-            statusDot.style.backgroundColor = '#2ecc71'; // Verde
-            statusText.innerText = 'Servidor listo';
+            const data = await response.json();
+            if (data.status === 'online') {
+                statusDot.style.backgroundColor = '#2ecc71'; // Verde
+                statusDot.style.boxShadow = '0 0 8px #2ecc71';
+                statusText.innerText = 'Servidor listo';
+                return; // Éxito, salimos de la función
+            }
         }
+        throw new Error('Servidor no listo');
     } catch (error) {
         statusDot.style.backgroundColor = '#f1c40f'; // Amarillo
         statusText.innerText = 'Servidor despertando... (puede tardar 1 min)';
